@@ -67,6 +67,7 @@ h1 {
 
 /* Contenedor del juego (Efecto de Vidrio Esmerilado / Glassmorphism) */
 .Container {
+    position: relative;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -78,6 +79,18 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+#winning-line {
+    position: absolute;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(56, 189, 248, 0.95));
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.75);
+    transform-origin: left center;
+    pointer-events: none;
+    z-index: 5;
+    display: none;
 }
 
 /* Filas alineadas perfectamente */

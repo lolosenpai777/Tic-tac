@@ -1,9 +1,150 @@
-button{
-    width: 200px;
-    height: 150px;
+/* ==========================================
+   Estética Frutiger Aero / Glassmorphism 🌐💧
+   ========================================== */
+
+/* Fondo dinámico con un gradiente muy Frutiger Aero */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
 }
 
-container {
+/* Burbujas decorativas de fondo típicas de Frutiger Aero 🫧 */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 212, 255, 0.1) 70%);
+    filter: blur(2px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    width: 250px;
+    height: 250px;
+    top: 10%;
+    left: 15%;
+}
+
+body::after {
+    width: 180px;
+    height: 180px;
+    bottom: 15%;
+    right: 15%;
+}
+
+/* Título con brillo "glossy" y sombra suave */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to bottom, #ffffff 40%, #a5f3fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0, 212, 255, 0.4));
+    font-weight: 800;
+}
+
+/* Estado del turno */
+#status {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+/* Contenedor del juego (Efecto de Vidrio Esmerilado / Glassmorphism) */
+.Container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Filas alineadas perfectamente */
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+/* Los Botones del Tablero (Efecto Botón de Cristal) */
+.row button {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+    box-shadow: inset 0 4px 4px rgba(255, 255, 255, 0.2), 
+                0 4px 10px rgba(0, 0, 0, 0.15);
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    outline: none;
+}
+
+/* Efectos al pasar el cursor y presionar los botones */
+.row button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: inset 0 4px 8px rgba(255, 255, 255, 0.3), 
+                0 0 15px rgba(56, 189, 248, 0.4);
+    transform: translateY(-2px);
+}
+
+.row button:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón de Reiniciar (Glossy Frutiger Cyan) */
+#reset {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #00f2fe 0%, #4facfe 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px; /* Bordes totalmente redondeados tipo pastilla */
+    cursor: pointer;
+    box-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.4), 
+                0 10px 20px rgba(79, 172, 254, 0.4);
+    transition: all 0.2s ease;
+}
+
+#reset:hover {
+    background: linear-gradient(to bottom, #33f6ff 0%, #60b4ff 100%);
+    box-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.5), 
+                0 12px 25px rgba(79, 172, 254, 0.6);
+    transform: scale(1.03);
+}
+
+#reset:active {
+    transform: scale(0.97);
 }
